@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Letter Drop Challenge</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+  :root {
+    --navy: #1a2744;
+    --navy-light: #243058;
+    --gold: #FFD700;
+    --gold-muted: rgba(255, 215, 0, 0.15);
+    --white: #f0ede4;
+    --muted: rgba(240, 237, 228, 0.5);
+    --border: rgba(255, 215, 0, 0.15);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    text-align: center;
+  }
+  .logo-link { text-decoration: none; display: inline-block; }
+  .logo-wordmark {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .logo-tiles {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+  }
+  .tile {
+    width: 36px; height: 36px;
+    background: var(--gold);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--navy);
+  }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+  .page-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 40px 0 16px;
+  }
+  p { color: rgba(240, 237, 228, 0.85); margin-bottom: 16px; }
+  .faq-item {
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+  .faq-q {
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  .faq-a {
+    color: rgba(240, 237, 228, 0.75);
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .contact-card {
+    background: var(--gold-muted);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 48px;
+    text-align: center;
+  }
+  .contact-card h2 { margin-top: 0; }
+  .email-btn {
+    display: inline-block;
+    margin-top: 16px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .email-btn:hover { opacity: 0.85; }
+  .response-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+  a { color: var(--gold); text-decoration: none; }
+  footer {
+    text-align: center;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="https://unserious.games" class="logo-link">
+    <div class="logo-wordmark">Unserious Games</div>
+    <div class="logo-tiles">
+      <div class="tile">D</div>
+      <div class="tile">R</div>
+      <div class="tile">O</div>
+      <div class="tile">P</div>
+    </div>
+  </a>
+</header>
+
+<div class="container">
+  <div class="page-label">Help</div>
+  <h1>Support</h1>
+  <p class="subtitle">Letter Drop Challenge — we're here to help.</p>
+
+  <h2>How to play</h2>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I form a word?</p>
+    <p class="faq-a">Swipe across adjacent letter tiles to connect them into a word. You can swipe in any direction — up, down, left, right, and all four diagonals. No tile can be used twice in the same word.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How many waves are there?</p>
+    <p class="faq-a">Each daily puzzle has six waves. Waves 1–2 are Easy, waves 3–4 are Tricky, and waves 5–6 are Savage. You get one word submission per wave.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">What is a Combo?</p>
+    <p class="faq-a">Successfully submitting a word in consecutive waves builds your combo streak. Each consecutive wave adds a bonus to your score. Miss a wave and your streak resets. Hit all 6 for a Perfect Round and a bonus 200 points.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How is my score calculated?</p>
+    <p class="faq-a">Your score is based on word length (word length × 10 points) plus a streak bonus that grows with each consecutive successful wave. Longer words on harder waves score the most.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">What is slow motion?</p>
+    <p class="faq-a">Hold your finger anywhere on the screen (not on a tile) to activate slow motion. Everything slows down, giving you more time to think. You have 15 seconds of slow motion per round — use it wisely.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">What does the banked time do?</p>
+    <p class="faq-a">Submit a word before your wave timer runs out and the leftover seconds are distributed equally across your remaining waves. Early submissions help you on the harder later waves.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Why is there only one puzzle per day?</p>
+    <p class="faq-a">Letter Drop Challenge is a daily game — everyone in the world plays the same puzzle on the same day. Come back tomorrow for a new one.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">The app says it can't load today's puzzle — what should I do?</p>
+    <p class="faq-a">Check your internet connection and try again. The daily puzzle requires a connection to load. If the problem persists, please contact us below.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Why is my streak reset?</p>
+    <p class="faq-a">Your daily play streak resets if you miss a day. Make sure to play at least once every 24 hours to keep it going.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">What does the green word on the results screen mean?</p>
+    <p class="faq-a">The green word shown next to each wave is the best word available in that grid. Tap it to see its definition and learn something new.</p>
+  </div>
+
+  <div class="contact-card">
+    <h2>Still need help?</h2>
+    <p style="color: var(--muted); margin-bottom: 4px;">We're a small independent studio and we read every message.</p>
+    <a href="mailto:hello@unserious.games" class="email-btn">hello@unserious.games</a>
+    <p class="response-note">We aim to respond within 2 business days.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p><a href="https://unserious.games">unserious.games</a> &nbsp;·&nbsp; Support &nbsp;·&nbsp; <a href="/letterdrop/privacy">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>

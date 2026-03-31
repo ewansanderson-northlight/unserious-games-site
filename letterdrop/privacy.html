@@ -1,123 +1,265 @@
+Privacy · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Letter Drop Challenge</title>
+<title>Privacy Policy — Letter Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
   :root {
-    --navy: #1a2744;
-    --navy-light: #243058;
-    --gold: #FFD700;
-    --gold-muted: rgba(255, 215, 0, 0.15);
-    --white: #f0ede4;
-    --muted: rgba(240, 237, 228, 0.5);
-    --border: rgba(255, 215, 0, 0.15);
+    --navy:        #152038;
+    --navy-card:   #1c2d4a;
+    --navy-tile:   #243558;
+    --gold:        #F5B931;
+    --gold-dim:    rgba(245, 185, 49, 0.12);
+    --gold-border: rgba(245, 185, 49, 0.25);
+    --white:       #EEE8D8;
+    --muted:       rgba(238, 232, 216, 0.45);
+    --body-text:   rgba(238, 232, 216, 0.80);
+    --radius:      14px;
   }
+ 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
   body {
     background: var(--navy);
     color: var(--white);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.75;
     min-height: 100vh;
   }
+ 
+  /* ── HEADER ── */
   header {
-    border-bottom: 1px solid var(--border);
-    padding: 24px 0;
+    padding: 28px 0 24px;
     text-align: center;
+    border-bottom: 1px solid var(--gold-border);
   }
-  .logo-link { text-decoration: none; display: inline-block; }
-  .logo-wordmark {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: var(--muted);
+ 
+  .logo-link { text-decoration: none; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; }
+ 
+  .logo-studio {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    color: var(--muted);
   }
+ 
+  .logo-letter {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+ 
   .logo-tiles {
     display: flex;
-    gap: 6px;
-    justify-content: center;
+    gap: 7px;
   }
+ 
   .tile {
-    width: 36px; height: 36px;
+    width: 40px;
+    height: 40px;
     background: var(--gold);
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
     color: var(--navy);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.18);
+    letter-spacing: 0;
   }
+ 
+  /* ── CONTAINER ── */
   .container {
     max-width: 680px;
     margin: 0 auto;
-    padding: 60px 24px 80px;
+    padding: 56px 24px 88px;
   }
+ 
+  /* ── PAGE META ── */
   .page-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 12px;
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin-bottom: 18px;
   }
+ 
   h1 {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 38px;
+    font-weight: 900;
     color: var(--white);
-    margin-bottom: 8px;
-    line-height: 1.2;
+    line-height: 1.15;
+    margin-bottom: 10px;
   }
+ 
   .updated {
     font-size: 13px;
+    font-weight: 600;
     color: var(--muted);
-    margin-bottom: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--gold-border);
   }
+ 
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+ 
+  .callout p {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0;
+  }
+ 
+  /* ── SECTIONS ── */
   h2 {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: var(--gold);
-    margin: 40px 0 12px;
+    margin: 44px 0 14px;
   }
-  p { color: rgba(240, 237, 228, 0.85); margin-bottom: 16px; }
-  ul { 
-    color: rgba(240, 237, 228, 0.85);
-    padding-left: 20px;
+ 
+  p {
+    color: var(--body-text);
+    font-weight: 600;
+    margin-bottom: 14px;
+    font-size: 15px;
+  }
+ 
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 14px;
+  }
+ 
+  li {
+    color: var(--body-text);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 0 8px 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+ 
+  li:last-child { border-bottom: none; }
+ 
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+ 
+  /* ── DATA CARD (for the "what we track" list) ── */
+  .data-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 4px 0;
     margin-bottom: 16px;
   }
-  li { margin-bottom: 8px; }
-  .highlight-box {
-    background: var(--gold-muted);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 24px 0;
+ 
+  .data-card li {
+    padding: 11px 20px 11px 44px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
-  .highlight-box p { margin: 0; color: var(--white); }
-  a { color: var(--gold); text-decoration: none; }
+ 
+  .data-card li:last-child { border-bottom: none; }
+ 
+  .data-card li::before {
+    left: 20px;
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    opacity: 0.5;
+    border-radius: 2px;
+    transform: translateY(-50%) rotate(45deg);
+  }
+ 
+  /* ── NONE LIST (strikethrough-style) ── */
+  .none-list li::before {
+    content: '—';
+    background: none;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    transform: none;
+    top: 9px;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+ 
+  /* ── CONTACT BLOCK ── */
+  .contact-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-top: 12px;
+  }
+ 
+  .contact-card p { margin: 0; line-height: 1.9; }
+ 
+  a { color: var(--gold); text-decoration: none; font-weight: 700; }
   a:hover { text-decoration: underline; }
+ 
+  /* ── FOOTER ── */
   footer {
     text-align: center;
-    padding: 32px;
-    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    border-top: 1px solid var(--gold-border);
     font-size: 13px;
+    font-weight: 700;
     color: var(--muted);
   }
-  footer a { color: var(--muted); }
+ 
+  footer a { color: var(--muted); font-weight: 700; }
+  footer a:hover { color: var(--gold); text-decoration: none; }
+ 
+  .footer-sep { margin: 0 10px; opacity: 0.4; }
 </style>
 </head>
 <body>
-
+ 
 <header>
   <a href="https://unserious.games" class="logo-link">
-    <div class="logo-wordmark">Unserious Games</div>
+    <div class="logo-studio">Unserious Games</div>
+    <div class="logo-letter">Letter</div>
     <div class="logo-tiles">
       <div class="tile">D</div>
       <div class="tile">R</div>
@@ -126,67 +268,79 @@
     </div>
   </a>
 </header>
-
+ 
 <div class="container">
+ 
   <div class="page-label">Legal</div>
   <h1>Privacy Policy</h1>
-  <p class="updated">Letter Drop Challenge &nbsp;·&nbsp; Last updated 21 March 2026</p>
-
-  <div class="highlight-box">
-    <p>We built Letter Drop Challenge to be a daily word game, not a data business. We collect only what we need to make the game better, and we never sell your information.</p>
+  <p class="updated">Letter Drop &nbsp;·&nbsp; Last updated 31 March 2026</p>
+ 
+  <div class="callout">
+    <p>We built Letter Drop to be a word game, not a data business. We collect only what we need to make the game better, and we never sell your information.</p>
   </div>
-
+ 
   <h2>Who we are</h2>
-  <p>Letter Drop Challenge is developed and published by Unserious Games, an independent iOS game studio based in the United Kingdom. You can reach us at <a href="mailto:hello@unserious.games">hello@unserious.games</a>.</p>
-
+  <p>Letter Drop is developed and published by Unserious Games, an independent iOS game studio based in the United Kingdom. You can reach us at <a href="mailto:hello@unserious.games">hello@unserious.games</a>.</p>
+ 
   <h2>What we collect</h2>
   <p>We use PostHog (hosted in the EU) to collect anonymous usage analytics. This helps us understand how the game is played so we can improve it. Specifically, we track:</p>
-  <ul>
+  <ul class="data-card">
     <li>When the app is opened</li>
-    <li>When a puzzle is started or completed</li>
+    <li>When a Daily or Infinite Mode game is started or completed</li>
     <li>When a puzzle is abandoned</li>
+    <li>When Extra Time is used</li>
     <li>When a score is shared</li>
     <li>When the How to Play screen is viewed</li>
   </ul>
   <p>All analytics events are tied to a randomly generated anonymous ID. We do not collect your name, email address, device ID, or IP address. We do not use advertising identifiers (IDFA).</p>
-
+ 
   <h2>What we do not collect</h2>
-  <ul>
+  <ul class="none-list">
     <li>No name, email, or contact information</li>
-    <li>No precise location data — only approximate city/country derived from IP at ingestion (see below)</li>
+    <li>No precise location — only approximate city/country derived from IP at ingestion (see below)</li>
     <li>No device identifiers or advertising IDs</li>
     <li>No IP addresses (stripped before storage)</li>
     <li>No session recordings or screen captures</li>
     <li>No data from third-party sources</li>
   </ul>
-
+ 
   <h2>Approximate location</h2>
   <p>When your device sends an analytics event, PostHog's EU servers automatically derive an approximate location (city, country, and continent) from your IP address at the point of ingestion. The raw IP address is immediately discarded and never stored. The derived location (e.g. "United Kingdom", "Europe") is retained as part of the anonymous analytics record to help us understand where our players are based. This data is never linked to you personally and cannot be used to identify you.</p>
-
-  <h2>Data storage</h2>
-  <p>Anonymous analytics data is processed and stored by PostHog on servers in the European Union, in compliance with GDPR. Your game preferences (sound on/off, best score, streak) are stored locally on your device using iOS UserDefaults and never transmitted to us.</p>
-
+ 
+  <h2>Data stored on your device</h2>
+  <p>Your game preferences and progress — including sound settings, best score, current streak, words found, and Infinite Mode progress — are stored locally on your device using iOS UserDefaults. This data is never transmitted to us or any third party.</p>
+ 
   <h2>Third-party services</h2>
-  <p>The app uses the Free Dictionary API (<a href="https://dictionaryapi.dev" target="_blank">dictionaryapi.dev</a>) to fetch word definitions when you tap a word on the results screen. This request contains only the word being looked up — no personal data is transmitted.</p>
-
+  <p>The app uses the Free Dictionary API (<a href="https://dictionaryapi.dev" target="_blank">dictionaryapi.dev</a>) to fetch word definitions shown on the results screen after each game. This request contains only the word being looked up — no personal data is transmitted.</p>
+ 
   <h2>Children's privacy</h2>
-  <p>Letter Drop Challenge does not knowingly collect data from children under 13. The app contains no advertising and no in-app purchases.</p>
-
+  <p>Letter Drop does not knowingly collect data from children under 13. The app contains no advertising and no in-app purchases.</p>
+ 
   <h2>Your rights</h2>
   <p>Because we collect no personal data linked to you, there is nothing to access, correct, or delete. If you have any privacy concerns, please contact us at <a href="mailto:hello@unserious.games">hello@unserious.games</a> and we will respond within 30 days.</p>
-
+ 
   <h2>Changes to this policy</h2>
   <p>If we make material changes to this policy, we will update the date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
-
+ 
   <h2>Contact</h2>
-  <p>Unserious Games<br>
-  <a href="mailto:hello@unserious.games">hello@unserious.games</a><br>
-  United Kingdom</p>
+  <div class="contact-card">
+    <p>
+      Unserious Games<br>
+      <a href="mailto:hello@unserious.games">hello@unserious.games</a><br>
+      United Kingdom
+    </p>
+  </div>
+ 
 </div>
-
+ 
 <footer>
-  <p><a href="https://unserious.games">unserious.games</a> &nbsp;·&nbsp; <a href="/letterdrop/support">Support</a> &nbsp;·&nbsp; Privacy Policy</p>
+  <a href="https://unserious.games">unserious.games</a>
+  <span class="footer-sep">·</span>
+  <a href="/letterdrop/support">Support</a>
+  <span class="footer-sep">·</span>
+  Privacy Policy
 </footer>
-
+ 
 </body>
 </html>
+ 

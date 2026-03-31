@@ -3,154 +3,413 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support — Letter Drop Challenge</title>
+<title>Support — Letter Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
   :root {
-    --navy: #1a2744;
-    --navy-light: #243058;
-    --gold: #FFD700;
-    --gold-muted: rgba(255, 215, 0, 0.15);
-    --white: #f0ede4;
-    --muted: rgba(240, 237, 228, 0.5);
-    --border: rgba(255, 215, 0, 0.15);
+    --navy:        #152038;
+    --navy-card:   #1c2d4a;
+    --navy-tile:   #243558;
+    --gold:        #F5B931;
+    --gold-dim:    rgba(245, 185, 49, 0.12);
+    --gold-border: rgba(245, 185, 49, 0.25);
+    --white:       #EEE8D8;
+    --muted:       rgba(238, 232, 216, 0.45);
+    --body-text:   rgba(238, 232, 216, 0.80);
+    --green:       #4CAF7D;
+    --green-dim:   rgba(76, 175, 125, 0.12);
+    --radius:      14px;
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
     background: var(--navy);
     color: var(--white);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.75;
     min-height: 100vh;
   }
+
+  /* ── HEADER ── */
   header {
-    border-bottom: 1px solid var(--border);
-    padding: 24px 0;
+    padding: 28px 0 24px;
     text-align: center;
+    border-bottom: 1px solid var(--gold-border);
   }
-  .logo-link { text-decoration: none; display: inline-block; }
-  .logo-wordmark {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: var(--muted);
+
+  .logo-link { text-decoration: none; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; }
+
+  .logo-studio {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    color: var(--muted);
   }
+
+  .logo-letter {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
   .logo-tiles {
     display: flex;
-    gap: 6px;
-    justify-content: center;
+    gap: 7px;
   }
+
   .tile {
-    width: 36px; height: 36px;
+    width: 40px;
+    height: 40px;
     background: var(--gold);
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
     color: var(--navy);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.18);
   }
+
+  /* ── CONTAINER ── */
   .container {
     max-width: 680px;
     margin: 0 auto;
-    padding: 60px 24px 80px;
+    padding: 56px 24px 88px;
   }
+
+  /* ── PAGE META ── */
   .page-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 12px;
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin-bottom: 18px;
   }
+
   h1 {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 38px;
+    font-weight: 900;
     color: var(--white);
-    margin-bottom: 8px;
-    line-height: 1.2;
+    line-height: 1.15;
+    margin-bottom: 10px;
   }
+
   .subtitle {
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 600;
     color: var(--muted);
-    margin-bottom: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--gold-border);
   }
-  h2 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--gold);
-    margin: 40px 0 16px;
+
+  /* ── APP REDIRECT CARD ── */
+  .app-card {
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-bottom: 52px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
   }
-  p { color: rgba(240, 237, 228, 0.85); margin-bottom: 16px; }
-  .faq-item {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 12px;
+
+  .app-card-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
   }
-  .faq-q {
-    font-weight: 700;
+
+  .app-card-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 900;
     color: var(--white);
-    margin-bottom: 8px;
-    font-size: 15px;
+    margin-bottom: 4px;
   }
-  .faq-a {
-    color: rgba(240, 237, 228, 0.75);
-    font-size: 15px;
+
+  .app-card-text p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--body-text);
     margin: 0;
     line-height: 1.6;
   }
-  .contact-card {
-    background: var(--gold-muted);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    margin-top: 48px;
-    text-align: center;
+
+  .app-card-text p em {
+    font-style: normal;
+    color: var(--gold);
+    font-weight: 700;
   }
-  .contact-card h2 { margin-top: 0; }
-  .email-btn {
+
+  /* ── SECTION HEADERS ── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    margin-top: 48px;
+  }
+
+  .section-label:first-of-type { margin-top: 0; }
+
+  /* ── ACCORDION ── */
+  .accordion {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 12px;
+  }
+
+  details {
+    background: var(--navy-card);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  details:last-child { border-bottom: none; }
+
+  details[open] {
+    background: #203050;
+  }
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 20px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary .chevron {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--gold);
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary .chevron {
+    transform: rotate(180deg);
+  }
+
+  .accordion-body {
+    padding: 0 20px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--body-text);
+    line-height: 1.75;
+  }
+
+  .accordion-body p { margin-bottom: 10px; color: var(--body-text); font-size: 14px; }
+  .accordion-body p:last-child { margin-bottom: 0; }
+
+  /* ── SCORE BREAKDOWN ── */
+  .score-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+
+  .score-row-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .score-row-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--body-text);
+  }
+
+  .score-row-text strong {
+    color: var(--white);
+    font-weight: 900;
+  }
+
+  /* ── LETTER VALUES ── */
+  .letter-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .letter-tier {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+
+  .tier-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tier-common   { background: rgba(255,255,255,0.4); }
+  .tier-uncommon { background: rgba(238,232,216,0.7); }
+  .tier-rare     { background: var(--green); }
+
+  .letter-tier-label {
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--white);
+    min-width: 90px;
+  }
+
+  .letter-tier-pts {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .letter-tier-examples {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    margin-left: auto;
+    letter-spacing: 0.05em;
+  }
+
+  .tier-common-bg   { background: rgba(255,255,255,0.04); }
+  .tier-uncommon-bg { background: rgba(255,255,255,0.07); }
+  .tier-rare-bg     { background: rgba(76,175,125,0.10); }
+
+  /* ── MODE BADGES ── */
+  .mode-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .mode-daily {
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+  }
+
+  .mode-infinite {
+    background: rgba(76,175,125,0.12);
+    border: 1px solid rgba(76,175,125,0.3);
+    color: var(--green);
+  }
+
+  /* ── CONTACT ── */
+  .contact-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--body-text);
+    margin-bottom: 16px;
+  }
+
+  .contact-email {
     display: inline-block;
-    margin-top: 16px;
     background: var(--gold);
     color: var(--navy);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 15px;
-    padding: 14px 32px;
-    border-radius: 50px;
+    padding: 12px 28px;
+    border-radius: 10px;
     text-decoration: none;
-    transition: opacity 0.2s;
+    letter-spacing: 0.02em;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+    transition: opacity 0.15s;
   }
-  .email-btn:hover { opacity: 0.85; }
-  .response-note {
-    font-size: 13px;
+
+  .contact-email:hover { opacity: 0.88; }
+
+  .contact-note {
+    font-size: 12px;
+    font-weight: 700;
     color: var(--muted);
-    margin-top: 12px;
-    margin-bottom: 0;
+    margin-top: 14px;
+    margin-bottom: 0 !important;
   }
-  a { color: var(--gold); text-decoration: none; }
+
+  a { color: var(--gold); text-decoration: none; font-weight: 700; }
+  a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
   footer {
     text-align: center;
-    padding: 32px;
-    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    border-top: 1px solid var(--gold-border);
     font-size: 13px;
+    font-weight: 700;
     color: var(--muted);
   }
-  footer a { color: var(--muted); }
+
+  footer a { color: var(--muted); font-weight: 700; }
+  footer a:hover { color: var(--gold); text-decoration: none; }
+  .footer-sep { margin: 0 10px; opacity: 0.4; }
 </style>
 </head>
 <body>
 
 <header>
   <a href="https://unserious.games" class="logo-link">
-    <div class="logo-wordmark">Unserious Games</div>
+    <div class="logo-studio">Unserious Games</div>
+    <div class="logo-letter">Letter</div>
     <div class="logo-tiles">
       <div class="tile">D</div>
       <div class="tile">R</div>
@@ -161,73 +420,205 @@
 </header>
 
 <div class="container">
-  <div class="page-label">Help</div>
-  <h1>Support</h1>
-  <p class="subtitle">Letter Drop Challenge — we're here to help.</p>
 
-  <h2>How to play</h2>
+  <div class="page-label">Support</div>
+  <h1>How can we help?</h1>
+  <p class="subtitle">Letter Drop &nbsp;·&nbsp; Unserious Games</p>
 
-  <div class="faq-item">
-    <p class="faq-q">How do I form a word?</p>
-    <p class="faq-a">Swipe across adjacent letter tiles to connect them into a word. You can swipe in any direction — up, down, left, right, and all four diagonals. No tile can be used twice in the same word.</p>
+  <!-- App redirect -->
+  <div class="app-card">
+    <div class="app-card-icon">❓</div>
+    <div class="app-card-text">
+      <strong>Looking for the rules?</strong>
+      <p>The full How to Play guide is built into the app. Tap the <em>?</em> button on the home screen for swiping, banked time, combos, and more — explained with interactive examples.</p>
+    </div>
   </div>
 
-  <div class="faq-item">
-    <p class="faq-q">How many waves are there?</p>
-    <p class="faq-a">Each daily puzzle has six waves. Waves 1–2 are Easy, waves 3–4 are Tricky, and waves 5–6 are Savage. You get one word submission per wave.</p>
+  <!-- GAME MODES -->
+  <div class="section-label">Game Modes</div>
+
+  <div class="accordion">
+
+    <details>
+      <summary>
+        Daily Challenge
+        <svg class="chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="accordion-body">
+        <div class="mode-badge mode-daily">📅 Daily</div>
+        <p>One puzzle per day, shared by every player in the world. Six waves — Standard (15s), Tricky (10s), and Savage (5s) — each harder than the last. You get one word submission per wave.</p>
+        <p>Submit early and bank your leftover seconds to spend on tougher waves. Hit all six waves without missing for a Perfect Round bonus.</p>
+        <p>Come back every day to keep your streak alive.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        Infinite Mode
+        <svg class="chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="accordion-body">
+        <div class="mode-badge mode-infinite">∞ Infinite</div>
+        <p>Complete that day's Daily Challenge to unlock Infinite Mode for the rest of the day. It locks again tomorrow — so finish the daily first, then keep playing.</p>
+        <p>No waves, no limit — just keep going for as long as you can. Find a word on every block or it's game over. Three wrong words and you're out — each strike lands on the board, so watch them stack up. The timer gets tighter as you progress: Standard gives you 15 seconds, Tricky 10, Savage just 5 — with no banked time to fall back on.</p>
+        <p>How far can you go?</p>
+      </div>
+    </details>
+
   </div>
 
-  <div class="faq-item">
-    <p class="faq-q">What is a Combo?</p>
-    <p class="faq-a">Successfully submitting a word in consecutive waves builds your combo streak. Each consecutive wave adds a bonus to your score. Miss a wave and your streak resets. Hit all 6 for a Perfect Round and a bonus 200 points.</p>
+  <!-- SCORING -->
+  <div class="section-label">Scoring</div>
+
+  <div class="accordion">
+
+    <details>
+      <summary>
+        How scoring works
+        <svg class="chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="accordion-body">
+        <p>Your score is built from four things:</p>
+        <div class="score-rows">
+          <div class="score-row">
+            <div class="score-row-icon">📏</div>
+            <div class="score-row-text"><strong>Word length</strong> — longer words score more</div>
+          </div>
+          <div class="score-row">
+            <div class="score-row-icon">💎</div>
+            <div class="score-row-text"><strong>Letter rarity</strong> — rare letters are worth more points</div>
+          </div>
+          <div class="score-row">
+            <div class="score-row-icon">⚡</div>
+            <div class="score-row-text"><strong>Speed bonus</strong> — submit fast for extra points</div>
+          </div>
+          <div class="score-row">
+            <div class="score-row-icon">🔥</div>
+            <div class="score-row-text"><strong>Combos</strong> — hit words in consecutive waves for a growing streak bonus</div>
+          </div>
+          <div class="score-row">
+            <div class="score-row-icon">👑</div>
+            <div class="score-row-text"><strong>Perfect Round</strong> — hit all 6 waves without missing for a bonus</div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        Letter values
+        <svg class="chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="accordion-body">
+        <p>Each letter has a point value based on how rare it is. Rarer letters reward bigger, bolder word choices.</p>
+        <div class="letter-tiers">
+          <div class="letter-tier tier-common-bg">
+            <div class="tier-dot tier-common"></div>
+            <div class="letter-tier-label">Common</div>
+            <div class="letter-tier-pts">1–2 pts</div>
+            <div class="letter-tier-examples">A E I L N O R S T U</div>
+          </div>
+          <div class="letter-tier tier-uncommon-bg">
+            <div class="tier-dot tier-uncommon"></div>
+            <div class="letter-tier-label">Uncommon</div>
+            <div class="letter-tier-pts">3–5 pts</div>
+            <div class="letter-tier-examples">B C D F G H M P V W Y</div>
+          </div>
+          <div class="letter-tier tier-rare-bg">
+            <div class="tier-dot tier-rare"></div>
+            <div class="letter-tier-label">Rare</div>
+            <div class="letter-tier-pts">8–10 pts</div>
+            <div class="letter-tier-examples">J K Q X Z</div>
+          </div>
+        </div>
+      </div>
+    </details>
+
   </div>
 
-  <div class="faq-item">
-    <p class="faq-q">How is my score calculated?</p>
-    <p class="faq-a">Your score is based on word length (word length × 10 points) plus a streak bonus that grows with each consecutive successful wave. Longer words on harder waves score the most.</p>
+  <!-- TROUBLESHOOTING -->
+  <div class="section-label">Troubleshooting</div>
+
+  <div class="accordion">
+
+    <details>
+      <summary>
+        The app can't load today's puzzle
+        <svg class="chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="accordion-body">
+        <p>Try closing the app fully and reopening it — this fixes the issue in most cases. On iPhone, swipe up from the bottom of the screen to the app switcher, swipe Letter Drop away, then reopen it.</p>
+        <p>If that doesn't work, check your internet connection. If the problem keeps happening, contact us at <a href="mailto:hello@unserious.games">hello@unserious.games</a> and let us know your device and iOS version.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        My streak has reset unexpectedly
+        <svg class="chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round", stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="accordion-body">
+        <p>Your streak resets if you miss a day — you need to complete at least one Daily Challenge every 24 hours to keep it going.</p>
+        <p>Streaks are stored locally on your device, so uninstalling the app will also reset it. If you believe your streak reset in error, get in touch and we'll take a look.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        Infinite Mode is still locked
+        <svg class="chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="accordion-body">
+        <p>Infinite Mode unlocks each day once you've completed that day's Daily Challenge. It locks again at midnight, so you'll need to complete the new daily first before playing Infinite Mode again.</p>
+        <p>If you've completed today's daily and it's still showing as locked, try closing the app fully and reopening it.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        My score didn't save
+        <svg class="chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="accordion-body">
+        <p>Scores and stats are stored locally on your device. If you've deleted and reinstalled the app, your history won't be recoverable. If your score disappeared without reinstalling, please contact us with your device details and we'll investigate.</p>
+      </div>
+    </details>
+
   </div>
 
-  <div class="faq-item">
-    <p class="faq-q">What is slow motion?</p>
-    <p class="faq-a">Hold your finger anywhere on the screen (not on a tile) to activate slow motion. Everything slows down, giving you more time to think. You have 15 seconds of slow motion per round — use it wisely.</p>
-  </div>
-
-  <div class="faq-item">
-    <p class="faq-q">What does the banked time do?</p>
-    <p class="faq-a">Submit a word before your wave timer runs out and the leftover seconds are distributed equally across your remaining waves. Early submissions help you on the harder later waves.</p>
-  </div>
-
-  <div class="faq-item">
-    <p class="faq-q">Why is there only one puzzle per day?</p>
-    <p class="faq-a">Letter Drop Challenge is a daily game — everyone in the world plays the same puzzle on the same day. Come back tomorrow for a new one.</p>
-  </div>
-
-  <div class="faq-item">
-    <p class="faq-q">The app says it can't load today's puzzle — what should I do?</p>
-    <p class="faq-a">Check your internet connection and try again. The daily puzzle requires a connection to load. If the problem persists, please contact us below.</p>
-  </div>
-
-  <div class="faq-item">
-    <p class="faq-q">Why is my streak reset?</p>
-    <p class="faq-a">Your daily play streak resets if you miss a day. Make sure to play at least once every 24 hours to keep it going.</p>
-  </div>
-
-  <div class="faq-item">
-    <p class="faq-q">What does the green word on the results screen mean?</p>
-    <p class="faq-a">The green word shown next to each wave is the best word available in that grid. Tap it to see its definition and learn something new.</p>
-  </div>
+  <!-- CONTACT -->
+  <div class="section-label">Still need help?</div>
 
   <div class="contact-card">
-    <h2>Still need help?</h2>
-    <p style="color: var(--muted); margin-bottom: 4px;">We're a small independent studio and we read every message.</p>
-    <a href="mailto:hello@unserious.games" class="email-btn">hello@unserious.games</a>
-    <p class="response-note">We aim to respond within 2 business days.</p>
+    <p>We're a one-person indie studio and we read every message.</p>
+    <a href="mailto:hello@unserious.games" class="contact-email">hello@unserious.games</a>
+    <p class="contact-note">We aim to respond within 2 business days.</p>
   </div>
 
 </div>
 
 <footer>
-  <p><a href="https://unserious.games">unserious.games</a> &nbsp;·&nbsp; Support &nbsp;·&nbsp; <a href="/letterdrop/privacy">Privacy Policy</a></p>
+  <a href="https://unserious.games">unserious.games</a>
+  <span class="footer-sep">·</span>
+  Support
+  <span class="footer-sep">·</span>
+  <a href="/letterdrop/privacy">Privacy Policy</a>
 </footer>
 
 </body>
